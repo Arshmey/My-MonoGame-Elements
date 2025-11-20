@@ -47,6 +47,7 @@ namespace ComtrolsTest
                 new Vector2(0, screen.Height - txtBoxTexture.Height), Color.White);
             paper = new TextBox(font, Color.Black, "It's a paper", paperTexture, new Vector2(256, 32), Color.White);
 
+            bNewGame.Action += () => { Environment.Exit(0); };
             textBox.Action += () => { textBox.text = "LMAO"; };
         }
 

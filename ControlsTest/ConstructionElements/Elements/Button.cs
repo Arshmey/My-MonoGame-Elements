@@ -35,17 +35,6 @@ namespace ComtrolsTest.ConstructionElements.Elements
             }
         }
 
-        public override bool IsCollision(Rectangle rectOther)
-        {
-            bool collisionX = fullRectangle.X < rectOther.X + rectOther.Width
-                && fullRectangle.X + (fullRectangle.Width * scale.Length()) > rectOther.X;
-
-            bool collisionY = fullRectangle.Y < rectOther.Y + rectOther.Height
-                && fullRectangle.Y + (fullRectangle.Height * scale.Length()) > rectOther.Y;
-
-            return collisionX && collisionY;
-        }
-
         public override void GetDraw(SpriteBatch spriteBatch)
         {
             if (!IsFocused)

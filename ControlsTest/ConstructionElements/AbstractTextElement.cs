@@ -8,7 +8,6 @@ namespace ComtrolsTest.Elements
         private protected SpriteFont font;
         private protected Vector2 locateText;
         private protected Color textColor;
-        private protected Vector2 scale;
         private protected Vector2 calibrate;
         public string text;
 
@@ -27,6 +26,8 @@ namespace ComtrolsTest.Elements
             if (texture.Width < measure.X || texture.Height < measure.Y)
             {
                 scale = measure / new Vector2(texture.Width, texture.Height);
+                fullRectangle = new Rectangle(fullRectangle.Location,
+                    new Point((int)(fullRectangle.Width * scale.Length()), (int)(fullRectangle.Height * scale.Length())));
             }
             else { scale = scaleStandart; }
 

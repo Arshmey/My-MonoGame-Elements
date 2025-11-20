@@ -9,6 +9,7 @@ namespace ComtrolsTest.Elements
 
         private protected Texture2D texture;
         private protected Vector2 locate;
+        private protected Vector2 scale;
         private protected Color elementColor;
         private protected bool IsFocused;
 
