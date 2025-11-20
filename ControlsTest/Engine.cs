@@ -46,6 +46,8 @@ namespace ComtrolsTest
             textBox = new TextBox(font, Color.White, "Text Test in Box Hahahaha", txtBoxTexture,
                 new Vector2(0, screen.Height - txtBoxTexture.Height), Color.White);
             paper = new TextBox(font, Color.Black, "It's a paper", paperTexture, new Vector2(256, 32), Color.White);
+
+            textBox.Action += () => { textBox.text = "LMAO"; };
         }
 
         protected override void Update(GameTime gameTime)

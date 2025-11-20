@@ -12,19 +12,20 @@ namespace ComtrolsTest.Elements
         private protected Color elementColor;
         private protected bool IsFocused;
 
+        public Rectangle fullRectangle;
+
         public AbstractElement(Texture2D texture, Vector2 locate, Color elementColor)
         {
             this.texture = texture;
             this.locate = locate;
             this.elementColor = elementColor;
             IsFocused = false;
+            fullRectangle = new Rectangle(locate.ToPoint(), texture.Bounds.Size);
         }
 
         public Rectangle GetRect() => texture.Bounds;
 
         public Vector2 GetLocate() => locate;
-
-        public Rectangle fullRectangle => new Rectangle(locate.ToPoint(), texture.Bounds.Size);
 
         public Vector2 GetCenter()
         {
@@ -34,7 +35,7 @@ namespace ComtrolsTest.Elements
         public virtual void FocusAndAction(MouseDriver mouse) { }
         public virtual void KeyboardAction(KeyboardDriver keyboard) { }
 
-        public bool IsCollision(Rectangle rectOther)
+        public virtual bool IsCollision(Rectangle rectOther)
         {
             bool collisionX = fullRectangle.X < rectOther.X + rectOther.Width
                 && fullRectangle.X + fullRectangle.Width > rectOther.X;
